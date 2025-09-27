@@ -7,7 +7,7 @@ return {
     config = function()
         require("mason").setup()
         require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "vue_ls" }
+            ensure_installed = { "lua_ls", "ts_ls", "vue_ls" }
         })
     end
 }
