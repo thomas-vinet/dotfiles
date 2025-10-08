@@ -12,6 +12,19 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     os.exit(1)
   end
 end
-vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("core.plugins")
+vim.opt.rtp:prepend(lazypath)
+require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp"} }, {
+  -- vérifie automatiquement les mises à jour des plugins mais sans notifier
+  -- lualine va se charger de nous afficher un icône
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  -- thème utilisé lors de l'installation de plugins
+  install = { colorscheme = { "tokyonight" } },
+  -- désactive la pénible notification au démarrage
+  change_detection = {
+    notify = false,
+  },
+})

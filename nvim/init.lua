@@ -1,2 +1,2 @@
-require("core.settings")
-require("core.lazy")
+require("core")
+require("config.lazy")
