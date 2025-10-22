@@ -12,3 +12,4 @@ local function quickfix()
 end
 
 vim.keymap.set('n', '<leader>qf', quickfix, { noremap = true, silent = true, desc = "Apply quickfix" })
+keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true, desc = "Quit terminal mode" })
